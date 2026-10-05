@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tawa &amp; Tadka | Cook it. Or get it in 30 minutes.</title>
+  <meta name="description" content="Veg and non-veg cooking tutorials, plus food delivery in 30 minutes within 20 km.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="logo" href="#home">Tawa &amp; Tadka</a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
+  <nav id="navLinks">
+    <a href="#categories">Categories</a>
+    <a href="#tutorials">Tutorials</a>
+    <a href="#delivery">Delivery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Cook it yourself.<br>Or we bring it hot in 30 minutes.</h1>
+      <p>Step-by-step veg and non-veg recipes, and fresh food from our shop to any door within 20 km.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#tutorials">Watch tutorials</a>
+        <a class="btn ghost" href="#delivery">Check delivery</a>
+      </div>
+    </div>
+    <div class="hero-img" role="img" aria-label="Plates of freshly cooked food"></div>
+  </section>
+
+  <section class="section" id="categories">
+    <h2>What are you craving?</h2>
+    <div class="cat-grid" id="catGrid"></div>
+  </section>
+
+  <section class="section alt" id="tutorials">
+    <h2>Learn to cook</h2>
+    <p class="sub">Pick a diet, then open a recipe for ingredients and steps.</p>
+    <div class="filters" role="group" aria-label="Filter recipes">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="veg"><span class="dot veg"></span>Veg</button>
+      <button class="chip" data-filter="non-veg"><span class="dot nonveg"></span>Non-veg</button>
+    </div>
+    <div class="recipe-grid" id="recipeGrid"></div>
+  </section>
+
+  <section class="section" id="delivery">
+    <div class="delivery">
+      <div>
+        <h2>30 minutes. 20 km. Hot.</h2>
+        <p>We deliver from our shop to anywhere within 20 km. Enter your distance to see if we reach you.</p>
+        <form id="distForm" class="dist-form" novalidate>
+          <label for="distance">Distance from our shop (km)</label>
+          <div class="row">
+            <input type="number" id="distance" min="0" step="0.1" placeholder="e.g. 12.5" required>
+            <button class="btn primary" type="submit">Check</button>
+          </div>
+          <p id="distResult" class="result" role="status"></p>
+        </form>
+      </div>
+      <ol class="how">
+        <li><strong>Order</strong> Choose your dishes and confirm your address.</li>
+        <li><strong>Cook</strong> Our kitchen starts the moment you order.</li>
+        <li><strong>Ride</strong> A rider brings it to your door in 30 minutes.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contact">
+  <div>
+    <strong>Tawa &amp; Tadka</strong>
+    <p>Open daily, 9 AM to 11 PM</p>
+  </div>
+  <div>
+    <p>Phone: +91 00000 00000</p>
+    <p>Email: hello@example.com</p>
+  </div>
+  <p class="copy">&copy; <span id="year"></span> Tawa &amp; Tadka. Internship project.</p>
+</footer>
+
+<dialog id="recipeDialog">
+  <button class="close" id="closeDialog" aria-label="Close">Close</button>
+  <h3 id="dTitle"></h3>
+  <p id="dCaption" class="sub"></p>
+  <h4>Ingredients</h4>
+  <ul id="dIngredients"></ul>
+  <h4>Steps</h4>
+  <ol id="dSteps"></ol>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
